@@ -21,11 +21,18 @@ export class ApiService {
       .pipe(map((job) => job as Job));
 
   updateJob = (job: Job) =>
-    this.httpClient.post(this.baseUrl + '/job?job_name=' + job.job_name, {
+     this.httpClient.post(this.baseUrl + '/job?job_name=' + job.job_name, {
       job_name: job.job_name,
       test_case: job.test_case,
     });
 
   runJob = (jobName: string) =>
     this.httpClient.post(this.baseUrl + '/run?job_name=' + jobName, {});
+
+  deleteJob = (jobName: string) => 
+  this.httpClient.delete(this.baseUrl + '/job?job_name=' + jobName);
+
+  getJobLog = (jobName: string) =>
+  this.httpClient.get(this.baseUrl + '/log?job_name=' + jobName, {responseType: 'text'});
+
 }

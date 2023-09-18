@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {ApiService} from "./api/services/api-service";
-import {Observable} from "rxjs";
+import {Observable, tap} from "rxjs";
 import {Job} from "./api/models/Job";
 import {DialogService} from "primeng/dynamicdialog";
 import {JobComponent} from "./features/job/job.component";
@@ -23,4 +23,18 @@ export class AppComponent {
   openCreateJobDialog = () => this.dialogService.open(JobComponent, {});
 
   runJob = (jobName: string) => this.apiService.runJob(jobName).subscribe();
+
+  deleteJob = (jobName: string) => this.apiService.deleteJob(jobName).subscribe();
+
+  getJobLog = (jobName: string) => this.apiService.getJobLog(jobName).pipe(
+    tap(htmlContent => {
+      const newWindow = window.open();
+      if (newWindow) {
+        newWindow.document.write(htmlContent);
+        newWindow.document.close();
+      } else {
+        alert('Please allow pop-ups to view the HTML content.');
+      }
+    })
+  ).subscribe();
 }
