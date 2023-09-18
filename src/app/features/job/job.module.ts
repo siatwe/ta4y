@@ -4,6 +4,7 @@ import {AsyncPipe, NgIf} from "@angular/common";
 import {DialogModule} from "primeng/dialog";
 import {ButtonModule} from 'primeng/button';
 import {FormsModule} from "@angular/forms";
+import {HighlightJsDirective} from "ngx-highlight-js";
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import {FormsModule} from "@angular/forms";
     ButtonModule,
     NgIf,
     FormsModule,
+    HighlightJsDirective,
   ],
   providers: [],
   bootstrap: []

@@ -8,6 +8,7 @@ import {DialogService} from "primeng/dynamicdialog";
 import {JobModule} from "./features/job/job.module";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {ButtonModule} from "primeng/button";
+import {HighlightJsModule} from "ngx-highlight-js";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {ButtonModule} from "primeng/button";
     DialogModule,
     JobModule,
     BrowserAnimationsModule,
-    ButtonModule
+    ButtonModule,
+    HighlightJsModule
   ],
   providers: [DialogService],
   bootstrap: [AppComponent]

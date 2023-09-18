@@ -6,6 +6,14 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="/assets/atom-one-dark.min.css" />
+  <script src="/assets/highlight.js"></script>
+  <script type="text/javascript" src="/assets/languages/robot.js"></script>
+  <script type="text/javascript" src="/assets/languages/typescript.min.js"></script>
+  <script type="text/javascript">
+    hljs.registerLanguage('robot', window.hljsDefineRobot);
+    hljs.highlightAll();
+  </script>
 </head>
 <body>
   <app-root></app-root>
