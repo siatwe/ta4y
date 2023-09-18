@@ -1,7 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
 body {
   width: 40%;
-  display: block; 
+  display: block;
   margin: 0 auto;
   background: darkgray;
+}
+
+.wrapper {
+  position: relative;
+
+  min-width: 800px;
+  min-height: 500px;
+}
+
+#editing, pre.robot {
+  /* Both elements need the same text and space styling so they are directly on top of each other */
+  margin-top: 10px;
+  padding-top: 10px;
+  border: 0;
+  width: calc(100% - 12px);
+  height: calc(100% - 30px);
+  overflow: hidden;
+}
+
+#editing, pre.robot, pre.robot * {
+  /* Also add text styles to highlighting tokens */
+  font-size: 15pt;
+  font-family: monospace;
+  line-height: 20pt;
+}
+
+#editing, pre.robot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  resize: none;
+}
+
+/* Move the textarea in front of the result */
+#editing {
+  z-index: 1;
+  color: transparent;
+  background: transparent;
+  caret-color: white; /* Or choose your favorite color */
+
+  white-space: nowrap;
+}
+
+pre.robot {
+  z-index: 0;
 }

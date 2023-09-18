@@ -1,9 +1,10 @@
 <div class="Job"  *ngIf="(job$ | async) as job">
   <div class="Job__Content">
     <input [readonly]="!!data" type="text" [(ngModel)]="job.job_name">
-    <textarea [(ngModel)]="job.test_case"></textarea>
-    <textarea highlight-js [lang]="'robot'" [(ngModel)]="job.test_case"></textarea
-    >
+    <div class="wrapper">
+      <textarea id="editing" spellcheck="false" [(ngModel)]="job.test_case"></textarea>
+      <textarea id="highlighting" highlight-js [lang]="'robot'" [(ngModel)]="job.test_case"></textarea>
+    </div>
   </div>
   <div class="Job__Footer">
     <p-button (click)="submit(job)" label="Submit"></p-button>
