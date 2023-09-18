@@ -21,4 +21,6 @@ export class AppComponent {
   openJobDetail = (jobName: string | undefined) => this.dialogService.open(JobComponent, {data: {jobName}})
 
   openCreateJobDialog = () => this.dialogService.open(JobComponent, {});
+
+  runJob = (jobName: string) => this.apiService.runJob(jobName).subscribe();
 }

@@ -9,6 +9,7 @@
   &__CreateButton.p-element {
     display: block;
     margin-bottom: 20px !important;
+    text-align: center;
   }
 
   &__List {
@@ -21,6 +22,7 @@
       padding: 20px 5px;
       border: 1px solid darkblue;
       margin-bottom: 20px;
+      text-align: center;
     }
   }
 }
