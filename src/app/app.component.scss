@@ -1,2 +1,26 @@
 .Jobs {
+
+  &__Title,
+  &__Subtitle {
+    display: block;
+    text-align: center;
+  }
+
+  &__CreateButton.p-element {
+    display: block;
+    margin-bottom: 20px !important;
+  }
+
+  &__List {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &Item {
+      cursor: pointer;
+      padding: 20px 5px;
+      border: 1px solid darkblue;
+      margin-bottom: 20px;
+    }
+  }
 }

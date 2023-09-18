@@ -18,7 +18,7 @@ export class AppComponent {
     this.jobs$ = this.apiService.getJobs();
   }
 
-  openJobDetail = (jobId: number | undefined) => this.dialogService.open(JobComponent, {data: {jobId}})
+  openJobDetail = (jobName: string | undefined) => this.dialogService.open(JobComponent, {data: {jobName}})
 
-  protected readonly open = open;
+  openCreateJobDialog = () => this.dialogService.open(JobComponent, {});
 }

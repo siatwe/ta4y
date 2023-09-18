@@ -1,2 +1,9 @@
-{{(job$ | async)?.job_name}}
-
+<div class="Job"  *ngIf="(job$ | async) as job">
+  <div class="Job__Content">
+    <input [readonly]="!!data" type="text" [(ngModel)]="job.job_name">
+    <textarea [(ngModel)]="job.test_case"></textarea>
+  </div>
+  <div class="Job__Footer">
+    <p-button (click)="submit(job)" label="Submit"></p-button>
+  </div>
+</div>

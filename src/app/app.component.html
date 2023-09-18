@@ -2,9 +2,9 @@
   <h1 class="Jobs__Title">TA4Y</h1>
   <br>
   <h2 class="Jobs__Subtitle">Test Cases</h2>
-  <button class="Jobs__CreateButton">Create Job</button>
+  <p-button (click)="openCreateJobDialog()" class="Jobs__CreateButton">Create Job</p-button>
   <ul class="Jobs__List" *ngIf="(jobs$ | async) as jobs">
-    <li (click)="openJobDetail(job?.job_id)" class="Jobs__ListItem" *ngFor="let job of jobs">{{job?.job_id}}: {{job?.job_name}}</li>
+    <li (click)="openJobDetail(job?.job_name)" class="Jobs__ListItem" *ngFor="let job of jobs">{{job?.job_name}}</li>
     <li class="Jobs__ListEmpty" *ngIf="!jobs.length">
       No jobs configured. Create one.
     </li>

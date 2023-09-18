@@ -16,9 +16,13 @@ export class ApiService {
   getJobs = () => this.httpClient.get(this.baseUrl + '/jobs').pipe(
     map(jobs => jobs as Job[])
   );
-  getJob = (jobId: number) => this.httpClient.get(this.baseUrl + '/jobs?job_id=' + jobId).pipe(
+  getJob = (jobName: string) => this.httpClient.get(this.baseUrl + '/jobs?job_name=' + jobName).pipe(
     map(job => job as Job)
   );
 
+  updateJob = (job: Job) => this.httpClient.post(this.baseUrl + '/job?job_name=' + job.job_name, {
+    job_name: job.job_name,
+    test_case: job.test_case
+  })
 
 }
