@@ -1,7 +1,6 @@
 .Jobs {
 
-  &__Title,
-  &__Subtitle {
+  &__Title {
     display: block;
     text-align: center;
   }
@@ -18,11 +17,17 @@
     list-style: none;
 
     &Item {
-      cursor: pointer;
       padding: 20px 5px;
-      border: 4px solid black;
+      background-color: #797777;
       margin-bottom: 20px;
       text-align: center;
+      transition: box-shadow .3s;
+      &:hover {
+        box-shadow: 0 0 11px rgba(33,33,33,.5);
+      }
+      .p-element {
+        margin: 0 5px!important;
+      }
     }
   }
 }

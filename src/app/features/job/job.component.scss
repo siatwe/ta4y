@@ -1,9 +1,14 @@
 .Job {
-    &__Content {
+  &__Content {
 
-        textarea,
-        input {
-            display: block
-        }
+    textarea,
+    input {
+      display: block;
+      margin-bottom: 10px;
     }
+    textarea {
+      width: 500px;
+      height: 500px;
+    }
+  }
 }

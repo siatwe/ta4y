@@ -1,7 +1,5 @@
 <div class="Jobs">
   <h1 class="Jobs__Title">TA4Y</h1>
-  <br>
-  <h2 class="Jobs__Subtitle">Test Cases</h2>
   <p-button (click)="openCreateJobDialog()" class="Jobs__CreateButton">Create Job</p-button>
   <ul class="Jobs__List" *ngIf="(jobs$ | async) as jobs">
     <li class="Jobs__ListItem" *ngFor="let job of jobs">
@@ -16,3 +14,5 @@
     </li>
   </ul>
 </div>
+<p-toast position="bottom-right"></p-toast>
+<p-confirmDialog></p-confirmDialog>

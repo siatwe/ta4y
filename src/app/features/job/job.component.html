@@ -1,7 +1,12 @@
-<div class="Job"  *ngIf="(job$ | async) as job">
+<div class="Job" *ngIf="(job$ | async) as job">
+  <h2>Create/Edit Job</h2>
   <div class="Job__Content">
-    <input [readonly]="!!data" type="text" [(ngModel)]="job.job_name">
-    <textarea [(ngModel)]="job.test_case"></textarea>
+    <label for="jobName">Job Name:</label>
+    <input [disabled]="!!data" type="text" [(ngModel)]="job.job_name" id="jobName">
+
+    <label for="testCase">Code:</label>
+    <textarea [(ngModel)]="job.test_case" id="testCase"></textarea>
+
   </div>
   <div class="Job__Footer">
     <p-button (click)="submit(job)" label="Submit"></p-button>

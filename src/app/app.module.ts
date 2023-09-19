@@ -8,6 +8,9 @@ import {DialogService} from "primeng/dynamicdialog";
 import {JobModule} from "./features/job/job.module";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {ButtonModule} from "primeng/button";
+import {ToastModule} from "primeng/toast";
+import {ConfirmationService, MessageService} from "primeng/api";
+import {ConfirmDialogModule} from "primeng/confirmdialog";
 
 @NgModule({
   declarations: [
@@ -19,9 +22,11 @@ import {ButtonModule} from "primeng/button";
     DialogModule,
     JobModule,
     BrowserAnimationsModule,
-    ButtonModule
+    ButtonModule,
+    ToastModule,
+    ConfirmDialogModule
   ],
-  providers: [DialogService],
+  providers: [DialogService, MessageService, ConfirmationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
