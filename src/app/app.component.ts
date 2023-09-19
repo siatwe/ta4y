@@ -29,9 +29,10 @@ export class AppComponent {
   openCreateJobDialog = () => this.dialogService.open(JobComponent, {});
 
   runJob = (jobName: string) => {
+    this.messageService.add({ severity: 'success', summary: 'Job RUN', detail: 'Job run was successfully started' });
     return this.apiService.runJob(jobName).pipe(
       tap(() => {
-        this.messageService.add({ severity: 'success', summary: 'Job RUN', detail: 'Job run was successfully started' });
+        this.messageService.add({ severity: 'success', summary: 'Job RUN FINISHED', detail: 'Job run was successfully finished' });
       }),
       catchError(error => {
         this.messageService.add({ severity: 'error', summary: 'Job RUN', detail: 'An error occurred, please try to turn your computer on and off again' });
