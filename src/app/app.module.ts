@@ -9,6 +9,9 @@ import {JobModule} from "./features/job/job.module";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {ButtonModule} from "primeng/button";
 import {HighlightJsModule} from "ngx-highlight-js";
+import {ToastModule} from "primeng/toast";
+import {ConfirmationService, MessageService} from "primeng/api";
+import {ConfirmDialogModule} from "primeng/confirmdialog";
 
 @NgModule({
   declarations: [
@@ -21,9 +24,12 @@ import {HighlightJsModule} from "ngx-highlight-js";
     JobModule,
     BrowserAnimationsModule,
     ButtonModule,
-    HighlightJsModule
+    HighlightJsModule,
+    ButtonModule,
+    ToastModule,
+    ConfirmDialogModule
   ],
-  providers: [DialogService],
+  providers: [DialogService, MessageService, ConfirmationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

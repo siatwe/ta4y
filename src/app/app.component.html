@@ -1,18 +1,18 @@
 <div class="Jobs">
   <h1 class="Jobs__Title">TA4Y</h1>
-  <br>
-  <h2 class="Jobs__Subtitle">Test Cases</h2>
   <p-button (click)="openCreateJobDialog()" class="Jobs__CreateButton">Create Job</p-button>
   <ul class="Jobs__List" *ngIf="(jobs$ | async) as jobs">
     <li class="Jobs__ListItem" *ngFor="let job of jobs">
       <h3>{{job?.job_name}}</h3>
       <p-button styleClass="p-button-warning" (click)="openJobDetail(job?.job_name)">EDIT</p-button>
       <p-button styleClass="p-button-success" (click)="runJob(job.job_name)">RUN</p-button>
-      <p-button styleClass="p-button-danger" (click)="deleteJob(job.job_name)">Delete</p-button>
       <p-button styleClass="p-button-help" (click)="getJobLog(job.job_name)">LOG</p-button>
+      <p-button styleClass="p-button-danger" (click)="deleteJob(job.job_name)">Delete</p-button>
     </li>
     <li class="Jobs__ListEmpty" *ngIf="!jobs.length">
       No jobs configured. Create one.
     </li>
   </ul>
 </div>
+<p-toast position="bottom-right"></p-toast>
+<p-confirmDialog></p-confirmDialog>
