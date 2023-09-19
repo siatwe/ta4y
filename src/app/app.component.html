@@ -6,8 +6,8 @@
       <h3>{{job?.job_name}}</h3>
       <p-button styleClass="p-button-warning" (click)="openJobDetail(job?.job_name)">EDIT</p-button>
       <p-button styleClass="p-button-success" (click)="runJob(job.job_name)">RUN</p-button>
-      <p-button styleClass="p-button-danger" (click)="deleteJob(job.job_name)">Delete</p-button>
       <p-button styleClass="p-button-help" (click)="getJobLog(job.job_name)">LOG</p-button>
+      <p-button styleClass="p-button-danger" (click)="deleteJob(job.job_name)">Delete</p-button>
     </li>
     <li class="Jobs__ListEmpty" *ngIf="!jobs.length">
       No jobs configured. Create one.
