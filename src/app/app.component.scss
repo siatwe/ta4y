@@ -27,6 +27,9 @@
       }
       .p-element {
         margin: 0 5px!important;
+        &:last-child {
+          margin-left: 50px!important;
+        }
       }
     }
   }
